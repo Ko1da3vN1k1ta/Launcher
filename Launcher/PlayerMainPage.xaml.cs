@@ -50,20 +50,29 @@ namespace Launcher
 
         private void Play_Click(object sender, RoutedEventArgs e)
         {
-            string selectedServer = cbServers.SelectedItem.ToString();
+            
 
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO LoginHistory (Login, Region, Server, LoginTime) VALUES (@Login, @Region, @Server, @LoginTime)", conn);
-            cmd.Parameters.AddWithValue("@Login", login);
-            cmd.Parameters.AddWithValue("@Region", region);
-            cmd.Parameters.AddWithValue("@Server", selectedServer);
-            cmd.Parameters.AddWithValue("@LoginTime", DateTime.Now);
+            if (cbServers != null)
+            {
+                
+                MessageBox.Show("Игра запускается...");
+                Application.Current.Shutdown();
+            }
+            else 
+            {
+                string selectedServer = cbServers.SelectedItem.ToString();
 
-            cmd.ExecuteNonQuery();
-            conn.Close();
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("INSERT INTO LoginHistory (Login, Region, Server, LoginTime) VALUES (@Login, @Region, @Server, @LoginTime)", conn);
+                cmd.Parameters.AddWithValue("@Login", login);
+                cmd.Parameters.AddWithValue("@Region", region);
+                cmd.Parameters.AddWithValue("@Server", selectedServer);
+                cmd.Parameters.AddWithValue("@LoginTime", DateTime.Now);
 
-            MessageBox.Show("Игра запускается...");
-            Application.Current.Shutdown(); 
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                MessageBox.Show("Пожалуйста, выбирите сервер");
+            }
         }
     }
 }
