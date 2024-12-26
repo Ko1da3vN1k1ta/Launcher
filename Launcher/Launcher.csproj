@@ -122,5 +122,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DeWatermark.ai_1734515649449 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DeWatermark.ai_1734515649449 %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
