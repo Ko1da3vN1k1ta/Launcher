@@ -154,6 +154,11 @@ MessageBox.Show($"Ошибка разблокировки пользовател
                 MessageBox.Show($"Ошибка просмотра статистики: {ex.Message}");
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new LoginPage());
+        }
     }
 }
 

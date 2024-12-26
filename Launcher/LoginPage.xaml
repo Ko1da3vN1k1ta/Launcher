@@ -10,16 +10,17 @@
 
     <Grid >
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="300">
-            <TextBlock Text="Вход"  FontSize="24" Foreground="White" Margin="0,0,0,20"/>
-            <TextBox Name="txtLogin" Margin="0,10"/>
+            
+            <TextBlock Text="Вход"  FontSize="24" Foreground="White" Margin="0,0,0,20" HorizontalAlignment="Center"/>
+            <TextBox Name="txtLogin" Margin="0,10" />
             <PasswordBox Name="txtPassword"  Margin="0,10"/>
             <ComboBox Name="cbRegion" Margin="0,10" >
                 <ComboBoxItem Content="EU" />
                 <ComboBoxItem Content="AS" />
                 <ComboBoxItem Content="AM" />
             </ComboBox>
-            <Button Content="Войти" Click="Login_Click" Margin="0,10"/>
-            <Button Content="Регистрация" Click="Register_Click" Margin="0,10"/>
+            <Button Content="Войти" Click="Login_Click" Margin="0,10" Background="Red" Foreground="White"/>
+            <Button Content="Регистрация" Click="Register_Click" Margin="0,10" Background="Red" Foreground="White"/>
         </StackPanel>
     </Grid>
 
